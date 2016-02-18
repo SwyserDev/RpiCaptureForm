@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en" ng-app="rpiApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AfriForum - Afrikaans!</title>
+    <meta name="description" content="Test page for my brand spanking new Raspberry Pi!">
+    <meta name="author" content="SwyserDev">
+
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="fonts/material-icons.css" />
+</head>
+
+<body layout="column" ng-cloak>
+
+    <md-toolbar layout="row" class="md-bg-200">
+        <div flex layout="row" layout-align="center center">
+            <h1>Capture Form</h1>
+        </div>
+    </md-toolbar>
+
+    <md-content class="md-padding" layout="column" flex ng-view>
+
+    </md-content>
+
+
+
+
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/votedController.js"></script>
+    <script src="app/factories/afriforumFactory.js"></script>
+
+</body>
+
+</html>

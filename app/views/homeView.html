@@ -1,0 +1,57 @@
+<md-toolbar class="md-accent">
+  <div class="md-toolbar-tools">
+    <h2>
+      <span>Dit is tyd om jou stem te lig!</span>
+    </h2>
+    <span flex></span>
+
+  </div>
+</md-toolbar>
+
+<md-whiteframe class="md-whiteframe-3dp" layout-padding>
+  <p>
+    Dit is tyd om jou stem dik te maak vir jou taal! Afrikaanse word tans onderdruk deur al die poesse by tuks! Kom ons stem en fok hulle ordentlik op!
+    <img ng-src="" alt="" />
+  </p>
+  <p>
+    Voltooi die vorm om jou stem te lig:
+  </p>
+  <form name="userForm">
+    <md-input-container class="md-block">
+      <label>Naam</label>
+      <md-icon class="material-icons">person</md-icon>
+      <input required name="name" ng-model="vote.name" />
+      <div ng-messages="userForm.name.$error" role="alert">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+      <label>Epos Addres</label>
+      <md-icon class="material-icons">mail_outline</md-icon>
+      <input required name="email" ng-model="vote.email" maxlength="100" ng-pattern="/^.+@.+\..+$/"  />
+      <div ng-messages="userForm.email.$error" role="alert">
+        <div ng-message="required">This is required.</div>
+        <div ng-message="pattern">Maak seker dat jou epos in ordentlik epos vorm is en probeer weer asseblief.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+      <label>Selfoon nommer</label>
+      <md-icon class="material-icons">phone</md-icon>
+      <input required type="number" name="cellNumber" ng-model="vote.cellNumber" ng-pattern="/[0-9]/" />
+      <div ng-messages="userForm.cellNumber.$error" role="alert">
+        <div ng-message="required">This is required.</div>
+        <div ng-message="pattern">Sleg nommers word toe gelaat in die veld..</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+      <label layout-padding>Stem jy vir Akrikaans?</label>
+      <md-switch ng-true-value="true" ng-false-value="false" ng-model="vote.counted" ng-change="voteChange(vote.counted);"><b>{{ voteMessage }}</b></md-switch>
+    </md-input-container>
+    <md-content layout="row">
+      <div flex></div>
+      <md-button class="md-raised md-primary" href="#voted" layout-padding>
+        <md-icon class="material-icons">done</md-icon> &nbsp;Stem
+      </md-button>
+    </md-content>
+  </form>
+</md-whiteframe>
