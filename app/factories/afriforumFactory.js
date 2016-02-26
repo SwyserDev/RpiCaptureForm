@@ -1,13 +1,13 @@
 (function(){
   'use strict';
 
-  rpiApp.factory('pirateFactory', function($http, $q){
+  rpiApp.factory('afriforumFactory', function($http, $q){
       return {
-          getMessages: function(){
-              return $http.get('/api/messages');
+          postVote: function(){
+              return $http.post('/api/postVote');
           },
-          getPhotos:  function(){
-              return $http.get('/api/photos');
+          getVoteCount:  function(){
+              return $http.get('/api/getVoteCount');
           }
       }
     });

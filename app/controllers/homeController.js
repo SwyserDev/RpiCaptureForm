@@ -1,22 +1,26 @@
 (function(){
   'use strict';
 
-  rpiApp.controller('HomeController', function($scope){
+  rpiApp.controller('HomeController', function($scope, $location, afriforumFactory){
     $scope.vote = {
         name: '',
         email: '',
         cellNumber: '',
-        counted: true
+        counted: false
       };
 
       $scope.voteMessage  = 'Ja asseblief!';
-      $scope.voteChange = function(vote){
+      $scope.voteChange = function(vote) {
         if(vote){
-          $scope.voteMessage = 'Ja asseblief!';
-        }
-        else{
           $scope.voteMessage = 'Nee dankie';
         }
+        else{
+          $scope.voteMessage = 'Ja asseblief!';
+        }
+      };
+
+      $scope.castVote = function(){
+          $location.path('voted');
       };
   });
 })();

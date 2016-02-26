@@ -13,15 +13,15 @@ router.get('/', function(req, res) {
   console.log('Serving index.html');
 });
 
-router.get('/messages', function(req, res) {
-  fs.readFile( __dirname + "/data/" + "messages.json", 'utf8', function (err, data) {
+router.post('/postVote', function(req, res) {
+  fs.readFile( __dirname + "/data/" + "votes.json", 'utf8', function (err, data) {
     res.send(JSON.parse(data));
    });
 });
 
-router.get('/photos', function(req, res) {
-  fs.readFile( __dirname + "/data/" + "photos.json", 'utf8', function (err, data) {
-    res.send(JSON.parse(data));
+router.get('/getVoteCount', function(req, res) {
+  fs.readFile( __dirname + "/data/" + "votes.json", 'utf8', function (err, data) {
+    res.send(true);
    });
 });
 

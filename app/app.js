@@ -12,6 +12,10 @@ rpiApp.config(function($routeProvider) {
     templateUrl: 'app/views/votedView.html',
     controller: 'VotedController'
   }).
+  when('/alreadyVoted', {
+    templateUrl: 'app/views/alreadyVotedView.html',
+    controller: 'alreadyVotedController'
+  }).
   otherwise({
     redirectTo: '/home'
   });
